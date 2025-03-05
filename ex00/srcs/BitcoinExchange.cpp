@@ -72,7 +72,7 @@ void BitcoinExchange::parse_input(std::ifstream &file) {
     }
 }
 
-void BitcoinExchange::_output(std::ifstream &file) {
+void BitcoinExchange::check_output(std::ifstream &file) {
     str line, key, value;
     int i = 0;
     getline(file, line);
