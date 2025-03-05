@@ -98,7 +98,7 @@ void BitcoinExchange::_output(std::ifstream &file) {
     }
 }
 
-bool BitcoinExchange::_checkDate(str line) {
+bool BitcoinExchange::check_date(str line) {
     std::istringstream s(line);
     str date;
     int year, month, day;
