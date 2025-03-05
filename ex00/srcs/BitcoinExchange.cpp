@@ -36,7 +36,7 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &original_copy
         this->map_obj = original_copy.map_obj;
         this->input_size = original_copy.input_size;
         this->input_array = new int[this->input_size];
-        for (int i = 0; i < this->_inputSize; i++)
+        for (int i = 0; i < this->input_size; i++)
             this->input_array[i] = original_copy.input_array[i];
     }
     return *this;
