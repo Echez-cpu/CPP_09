@@ -1,5 +1,5 @@
-#ifndef BITCOINEXCHANGE_HPP
-#define BITCOINEXCHANGE_HPP
+#ifndef     BITCOINEXCHANGE_HPP
+#define     BITCOINEXCHANGE_HPP
 
 #include <iostream>
 #include <fstream>
@@ -12,26 +12,26 @@ typedef std::string str;
 
 class BitcoinExchange {
 private:
-    std::map<str, float> _map;
-    int *_input;
-    int _inputSize;
+    std::map<str, float> map_obj;
+    int *    input_array;
+    int      input_size;
 
-    void _parseData(std::ifstream &file);
-    void _parseInput(std::ifstream &file);
-    void _output(std::ifstream &file);
-    int _getInputSize(std::ifstream &file) const;
+    void   parsing(std::ifstream &file);
+    void parse_input(std::ifstream &file);
+    void out_put(std::ifstream &file);
+    int get_input_size(std::ifstream &file) const;
     
-    bool _checkDate(str line);
-    bool _checkPositive(str line);
-    bool _checkTooLarge(str line);
-    void _nearestDate(str &key);
+    bool check_date(str line);
+    bool check_positive(str line);
+    bool check_if_too_large(str line);
+    void nearest_date(str &key);
 
 public:
     BitcoinExchange();
-    BitcoinExchange(std::ifstream &file, char **av);
-    BitcoinExchange(BitcoinExchange const &src);
+    BitcoinExchange(std::ifstream &file, char **argv);
+    BitcoinExchange(BitcoinExchange const &source);
     ~BitcoinExchange();
-    BitcoinExchange &operator=(BitcoinExchange const &rSym);
+    BitcoinExchange &operator=(BitcoinExchange const &original_copy);
 
     void printMap() const;
 };
