@@ -11,6 +11,15 @@
 typedef std::string str;
 
 class BitcoinExchange {
+
+
+public:
+    BitcoinExchange();
+    BitcoinExchange(std::ifstream &file, char **argv);
+    BitcoinExchange(BitcoinExchange const &source);
+    ~BitcoinExchange();
+    BitcoinExchange &operator=(BitcoinExchange const &original_copy);
+
 private:
     std::map<str, float> map_obj;
     int *    input_array;
@@ -25,13 +34,6 @@ private:
     bool check_positive(str line);
     bool check_if_too_large(str line);
     void nearest_date(str &key);
-
-public:
-    BitcoinExchange();
-    BitcoinExchange(std::ifstream &file, char **argv);
-    BitcoinExchange(BitcoinExchange const &source);
-    ~BitcoinExchange();
-    BitcoinExchange &operator=(BitcoinExchange const &original_copy);
 
     void printMap() const;
 };
