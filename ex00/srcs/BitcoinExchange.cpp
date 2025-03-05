@@ -11,7 +11,7 @@ BitcoinExchange::BitcoinExchange(std::ifstream &file, char **argv) {
     this->parsing(data);
     data.close();
 
-    this->input_size = this->get_input_size(file) - 1;
+    this->input_size = this->get_input_size(file) - 1;  // deal withe empty file case
     this->input_array = new int[this->input_size]();
 
     this->parse_input(file);
