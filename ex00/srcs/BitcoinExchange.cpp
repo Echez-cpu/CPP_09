@@ -42,7 +42,7 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &original_copy
     return *this;
 }
 
-void BitcoinExchange::_parseData(std::ifstream &file) {
+void BitcoinExchange::parsing(std::ifstream &file) {
     str line, key, value;
     float f;
 
@@ -58,7 +58,7 @@ void BitcoinExchange::_parseData(std::ifstream &file) {
     }
 }
 
-void BitcoinExchange::_parseInput(std::ifstream &file) {
+void BitcoinExchange::parse_input(std::ifstream &file) {
     str line;
     int i = 0;
     getline(file, line); // Skip header
