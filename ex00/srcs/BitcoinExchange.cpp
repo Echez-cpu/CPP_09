@@ -54,7 +54,7 @@ void BitcoinExchange::parsing(std::ifstream &file) {
 
         f = atof(value.c_str());
         if (!value.empty())
-            this->_map[key] = f;
+            this->map_array[key] = f;
     }
 }
 
