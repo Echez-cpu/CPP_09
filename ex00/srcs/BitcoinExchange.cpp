@@ -21,23 +21,23 @@ BitcoinExchange::BitcoinExchange(std::ifstream &file, char **argv) {
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &src) {
     this->map_obj = src.map_obj;
     this->input_size = src.input_size;
-    this->input_arr = new int[this->_inputSize];
-    for (int i = 0; i < this->_inputSize; i++)
-        this->_input[i] = src._input[i];
+    this->input_array = new int[this->input_size];
+    for (int i = 0; i < this->input_size; i++)
+        this->input_array[i] = src.input_array[i];
 }
 
 BitcoinExchange::~BitcoinExchange() {
-    delete[] this->_input;
+    delete[] this->input_array;
 }
 
-BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rSym) {
-    if (this != &rSym) {
-        delete[] this->_input;
-        this->_map = rSym._map;
-        this->_inputSize = rSym._inputSize;
-        this->_input = new int[this->_inputSize];
+BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &original_copy) {
+    if (this != &original_copy) {
+        delete[] this->input_array;
+        this->map_obj = original_copy.map_obj;
+        this->input_size = original_copy.input_size;
+        this->input_array = new int[this->input_size];
         for (int i = 0; i < this->_inputSize; i++)
-            this->_input[i] = rSym._input[i];
+            this->input_array[i] = original_copy.input_array[i];
     }
     return *this;
 }
