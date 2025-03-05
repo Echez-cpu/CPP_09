@@ -14,7 +14,7 @@ BitcoinExchange::BitcoinExchange(std::ifstream &file, char **argv) {
     this->input_size = this->get_input_size(file) - 1;
     this->input_arr = new int[this->input_size]();
 
-    this->parsing(file);
+    this->parse_input(file);
     this->out_put(file);
 }
 
