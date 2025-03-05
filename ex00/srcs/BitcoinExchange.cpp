@@ -83,7 +83,7 @@ void BitcoinExchange::check_output(std::ifstream &file) {
         getline(s, value, '|'); value = ::trim(value);
 
         if (_input[i] == 0) {
-            if (map_array.find(key) == map_array.end()) _nearestDate(key);
+            if (map_array.find(key) == map_array.end()) nearest_date(key);
             if (key == "Error: Year too old.")
                 std::cout << key << std::endl;
             else
