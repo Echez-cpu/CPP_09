@@ -164,7 +164,7 @@ void BitcoinExchange::_nearestDate(str &key) {
 
 
 
-int BitcoinExchange::_getInputSize(std::ifstream &file) const {
+int BitcoinExchange::get_input_size(std::ifstream &file) const {
     int     count = 0;
     str     line;
 
