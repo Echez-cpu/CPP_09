@@ -19,9 +19,9 @@ BitcoinExchange::BitcoinExchange(std::ifstream &file, char **argv) {
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &src) {
-    this->_map = src._map;
-    this->_inputSize = src._inputSize;
-    this->_input = new int[this->_inputSize];
+    this->map_obj = src.map_obj;
+    this->input_size = src.input_size;
+    this->input_arr = new int[this->_inputSize];
     for (int i = 0; i < this->_inputSize; i++)
         this->_input[i] = src._input[i];
 }
