@@ -1,6 +1,6 @@
 #include "../include/BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange() : input_arr(NULL), input_size(0) {}
+BitcoinExchange::BitcoinExchange() : input_array(NULL), input_size(0) {}
 
 BitcoinExchange::BitcoinExchange(std::ifstream &file, char **argv) {
     std::ifstream data("data.csv", std::ifstream::in);
