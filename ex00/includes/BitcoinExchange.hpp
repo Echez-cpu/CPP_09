@@ -27,7 +27,7 @@ private:
 
     void   parsing(std::ifstream &file);
     void parse_input(std::ifstream &file);
-    void out_put(std::ifstream &file);
+    void check_output(std::ifstream &file);
     int get_input_size(std::ifstream &file) const;
     
     bool check_date(str line);
