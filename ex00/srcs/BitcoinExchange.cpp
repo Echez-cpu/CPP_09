@@ -141,7 +141,7 @@ bool BitcoinExchange::check_positive(str line) {
 
 
 
-bool BitcoinExchange::_checkTooLarge(str line) {
+bool BitcoinExchange::check_if_too_Large(str line) {
     std::istringstream s(line);
     str value;
     float f;
