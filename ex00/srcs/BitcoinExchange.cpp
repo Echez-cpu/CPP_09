@@ -12,7 +12,7 @@ BitcoinExchange::BitcoinExchange(std::ifstream &file, char **argv) {
     data.close();
 
     this->input_size = this->get_input_size(file) - 1;
-    this->input_arr = new int[this->input_size]();
+    this->input_array = new int[this->input_size]();
 
     this->parse_input(file);
     this->out_put(file);
@@ -160,3 +160,28 @@ void BitcoinExchange::_nearestDate(str &key) {
     --it;
     key = it->first;
 }
+
+
+
+
+int BitcoinExchange::_getInputSize(std::ifstream &file) const {
+    int     count = 0;
+    str     line;
+
+
+    std::ifstream tempFile(file.rdbuf());  // Create a copy of the file stream
+
+    if (!tempFile) {
+        std::cerr << "Error: could not open input file.\n";
+        return 0;
+    }
+
+    while (std::getline(tempFile, line))
+        count++;
+
+    return count;
+}
+
+
+
+
