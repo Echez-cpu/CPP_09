@@ -77,22 +77,22 @@ void BitcoinExchange::check_output(std::ifstream &file) {
     int i = 0;
     getline(file, line);
 
-    while (i < this->_inputSize && getline(file, line)) {
+    while (i < this->input_size && getline(file, line)) {
         std::istringstream s(line);
         getline(s, key, '|'); key = ::trim(key);
         getline(s, value, '|'); value = ::trim(value);
 
         if (_input[i] == 0) {
-            if (_map.find(key) == _map.end()) _nearestDate(key);
+            if (map_array.find(key) == map_array.end()) _nearestDate(key);
             if (key == "Error: Year too old.")
                 std::cout << key << std::endl;
             else
-                std::cout << key << " => " << value << " = " << atof(value.c_str()) * _map[key] << std::endl;
-        } else if (_input[i] == 1)
+                std::cout << key << " => " << value << " = " << atof(value.c_str()) * map_array[key] << std::endl;
+        } else if (input_array[i] == 1)
             std::cout << "Error: not a positive number." << std::endl;
-        else if (_input[i] == 2)
+        else if (input_array[i] == 2)
             std::cout << "Error: bad input => " << key << std::endl;
-        else if (_input[i] == 3)
+        else if (input_array[i] == 3)
             std::cout << "Error: too large a number." << std::endl;
         i++;
     }
@@ -156,7 +156,7 @@ bool BitcoinExchange::check_if_too_Large(str line) {
 
 void BitcoinExchange::_nearestDate(str &key) {
     std::map<str, float>::iterator it = _map.lower_bound(key);
-    if (it == _map.begin()) {
+    if (it == map_array.begin()) {
         key = "Error: Year too old.";
         return;
     }
