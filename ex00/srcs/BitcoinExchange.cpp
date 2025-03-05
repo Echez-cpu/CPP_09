@@ -65,8 +65,8 @@ void BitcoinExchange::parse_input(std::ifstream &file) {
 
     while (getline(file, line) && i < this->input_size) {
         this->input_array[i] = 0;
-        if (!_checkPositive(line)) this->input_array[i] = 1;
-        if (!_checkDate(line) || line.length() < 11) this->input_array[i] = 2;
+        if (!check_positive(line)) this->input_array[i] = 1;
+        if (!check_date(line) || line.length() < 11) this->input_array[i] = 2;
         if (!_checkTooLarge(line)) this->input_array[i] = 3;
         i++;
     }
@@ -119,7 +119,7 @@ bool BitcoinExchange::_checkDate(str line) {
     return true;
 }
 
-bool BitcoinExchange::_checkPositive(str line) {
+bool BitcoinExchange::check_positive(str line) {
     std::istringstream s(line);
     str value;
 
