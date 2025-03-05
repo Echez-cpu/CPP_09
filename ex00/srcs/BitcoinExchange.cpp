@@ -139,6 +139,8 @@ bool BitcoinExchange::check_positive(str line) {
     return (f > 0);
 }
 
+
+
 bool BitcoinExchange::_checkTooLarge(str line) {
     std::istringstream s(line);
     str value;
@@ -148,8 +150,9 @@ bool BitcoinExchange::_checkTooLarge(str line) {
     getline(s, value, '|');
 
     f = atof(value.c_str());
-    return (f < static_cast<float>(__INT_MAX__));
+    return (f >= 0.0 && f <= 1000.0);
 }
+
 
 void BitcoinExchange::_nearestDate(str &key) {
     std::map<str, float>::iterator it = _map.lower_bound(key);
