@@ -17,6 +17,10 @@ BitcoinExchange::BitcoinExchange(std::ifstream &file, char **argv) {
     this->input_array = new int[this->input_size]();
 
     this->parse_input(file);
+    
+    file.clear();
+    file.seekg(0, std::ios::beg);    
+   
     this->check_output(file);
 }
 
