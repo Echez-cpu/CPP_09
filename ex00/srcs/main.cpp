@@ -1,5 +1,4 @@
-
-
+#include "../includes/BitcoinExchange.hpp"
 
 str		trim(const str & string)
 {
