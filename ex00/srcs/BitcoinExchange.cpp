@@ -169,20 +169,29 @@ void BitcoinExchange::nearest_date(str &key) {
 }
 
 
-
 int BitcoinExchange::get_input_size(std::ifstream &file) const {
     int count = 0;
     str line;
 
-    std::ifstream tempFile(argv[1], std::ifstream::in);  // Use the filename to reopen the file.
+    
+    std::ifstream tempFile(file);  
 
     if (!tempFile) {
         std::cerr << "Error: could not open input file.\n";
         return 0;
     }
 
-    while (std::getline(tempFile, line))
+    while (std::getline(tempFile, line)) {
         count++;
+    }
 
+   
+    file.clear(); 
+    file.seekg(0, std::ios::beg); 
+    
     return count;
 }
+
+
+
+
