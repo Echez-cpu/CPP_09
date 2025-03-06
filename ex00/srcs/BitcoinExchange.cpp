@@ -104,7 +104,7 @@ bool BitcoinExchange::check_date(str line) {
     int year, month, day;
 
     getline(s, date, '|');
-    date = ::trim(date);
+    date = trim(date);
 
     if (sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3)
         return false;
@@ -125,7 +125,7 @@ bool BitcoinExchange::check_positive(str line) {
 
     getline(s, value, '|');
     getline(s, value, '|');
-    value = ::trim(value);
+    value = trim(value);
 
     if (value.empty() || value.find('-') != str::npos)
         return false;
