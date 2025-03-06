@@ -154,17 +154,19 @@ bool BitcoinExchange::check_if_too_Large(str line) {
 }
 
 
+
 void BitcoinExchange::nearest_date(str &key) {
     std::map<str, float>::iterator it = map_array.lower_bound(key);
-    if (it == map_array.begin()) {
+    if (it == map_array.begin()) {  
         key = "Error: Year too old.";
         return;
     }
-    --it;             // move to an ealier date
+
+    if (it == map_array.end() || it->first != key)
+        --it;
+
     key = it->first;
 }
-
-
 
 
 int BitcoinExchange::get_input_size(std::ifstream &file) const {
