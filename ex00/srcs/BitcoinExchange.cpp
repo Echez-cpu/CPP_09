@@ -188,7 +188,7 @@ int BitcoinExchange::get_input_size(std::ifstream &file) const {
     return count;
 }
 
-str		trim(const str & string)
+str		BitcoinExchange::trim(const str & string)
 {
     size_t first = string.find_first_not_of(' ');
     if (str::npos == first)
