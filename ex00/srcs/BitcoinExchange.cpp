@@ -3,6 +3,8 @@
 BitcoinExchange::BitcoinExchange() : input_array(NULL), input_size(0) {}
 
 BitcoinExchange::BitcoinExchange(std::ifstream &file, char **argv) {
+    (void)argv;
+   
     std::ifstream data("data.csv", std::ifstream::in);
     if (!data) {
         std::cerr << "Error: could not open database file.\n";
