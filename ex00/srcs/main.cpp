@@ -19,7 +19,7 @@ void testInput(std::ifstream &file, int argc, char **argv) {
     
     file.open(argv[1], std::ifstream::in);
     if (!file.is_open())
-        throw std::runtime_error("Error: Could not open file: " + str(av[1]));
+        throw std::runtime_error("Error: Could not open file: " + str(argv[1]));
 
     str line;
     bool isEmpty = true;
