@@ -155,12 +155,12 @@ bool BitcoinExchange::check_if_too_Large(str line) {
 
 
 void BitcoinExchange::nearest_date(str &key) {
-    std::map<str, float>::iterator it = _map.lower_bound(key);
+    std::map<str, float>::iterator it = map_array.lower_bound(key);
     if (it == map_array.begin()) {
         key = "Error: Year too old.";
         return;
     }
-    --it;
+    --it;             // move to an ealier date
     key = it->first;
 }
 
