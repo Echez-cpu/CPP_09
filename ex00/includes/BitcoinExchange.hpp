@@ -21,8 +21,6 @@ public:
     BitcoinExchange &operator=(BitcoinExchange const &original_copy);
     
 
-    str		trim(const str & string);
-
 private:
     std::map<str, float> map_obj;
     int *    input_array;
@@ -37,6 +35,8 @@ private:
     bool check_positive(str line);
     bool check_if_too_large(str line);
     void nearest_date(str &key);
+
+    str		trim(const str & string);
   
 };
 
