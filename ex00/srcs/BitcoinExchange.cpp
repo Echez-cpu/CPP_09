@@ -1,4 +1,4 @@
-#include "../include/BitcoinExchange.hpp"
+#include "../includes/BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange() : input_array(NULL), input_size(0) {}
 
