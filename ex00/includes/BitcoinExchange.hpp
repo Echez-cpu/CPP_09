@@ -35,7 +35,7 @@ private:
     bool check_if_too_large(str line);
     void nearest_date(str &key);
 
-    void printMap() const;
+    str		trim(const str & string);
 };
 
 #endif
