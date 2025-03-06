@@ -79,8 +79,8 @@ void BitcoinExchange::check_output(std::ifstream &file) {
 
     while (i < this->input_size && getline(file, line)) {
         std::istringstream s(line);
-        getline(s, key, '|'); key = ::trim(key);
-        getline(s, value, '|'); value = ::trim(value);
+        getline(s, key, '|'); key = trim(key);
+        getline(s, value, '|'); value = trim(value);
 
         if (input_array[i] == 0) {
             if (map_obj.find(key) == map_obj.end()) nearest_date(key);
