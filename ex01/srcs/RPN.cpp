@@ -30,7 +30,7 @@ int RPN::apply_operator(int a, int b, char op) {
     throw std::runtime_error("Error: Invalid operator.");
 }
 
-int RPN::evaluate(const str &expression) {
+int RPN::RPN_algorithm(const str &expression) {
     std::stack<int> stack;
     std::istringstream istream_str(expression);
     std::string token;
