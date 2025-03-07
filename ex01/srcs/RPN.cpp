@@ -8,7 +8,7 @@ RPN::RPN(const RPN &source) {
 
 RPN &RPN::operator=(const RPN &original_copy) {
     if (this != &original_copy) {  
-        this->stack_obj = original_coy.stack_obj;
+        this->stack_obj = original_copy.stack_obj;
     }
     return *this;
 }
