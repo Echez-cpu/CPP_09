@@ -1,4 +1,6 @@
 #include "../includes/RPN.hpp"
+#define YELLOW     "\033[33m"
+
 
 int main(int argc, char **argv) {
     if (argc != 2) {
