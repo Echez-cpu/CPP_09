@@ -1,6 +1,7 @@
 #include "../includes/RPN.hpp"
 #define Y     "\033[33m"
 #define RESET   "\033[0m"
+#define G     "\033[32m"
 
 
 int main(int argc, char **argv) {
