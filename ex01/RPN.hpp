@@ -19,7 +19,7 @@ public:
 
 private:
     std::stack<int> stack_obj;
-    bool isOperator(const std::string &token); 
+    bool isOperator(const str &token); 
     int applyOperation(int a, int b, char op); 
 };
 
