@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
     try {
         RPN calculator;
         std::string expression = argv[1]; 
-        std::cout << G << "Result: " << RESET << Y << calculator.evaluate(expression) << RESET << std::endl;
+        std::cout << G << "Result: " << RESET << Y << calculator.RPN_algorithm(expression) << RESET << std::endl;
     } catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
