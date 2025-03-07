@@ -3,16 +3,15 @@
 RPN::RPN() {}
 
 RPN::RPN(const RPN &source) {
-    *this = other;
+    *this = source;
 }
 
 RPN &RPN::operator=(const RPN &original_copy) {
-    if (this != &other) {  
-        this->stack_obj = other.stack_obj;
+    if (this != &original_copy) {  
+        this->stack_obj = original_coy.stack_obj;
     }
     return *this;
 }
-
 
 RPN::~RPN() {}
 
@@ -33,17 +32,17 @@ int RPN::apply_operator(int a, int b, char op) {
 
 int RPN::evaluate(const str &expression) {
     std::stack<int> stack;
-    std::istringstream iss(expression);
+    std::istringstream istream_str(expression);
     std::string token;
 
-    while (iss >> token) {
-        if (token.length() == 1 && isOperator(token)) {
+    while (istream_str >> token) {
+        if (token.length() == 1 && confirm_op(token)) {
             if (stack.size() < 2) throw std::runtime_error("Error: Invalid expression.");
 
             int b = stack.top(); stack.pop();
             int a = stack.top(); stack.pop();
 
-            stack.push(applyOperation(a, b, token[0]));
+            stack.push(apply_operator(a, b, token[0]));
         } 
         else if (token.length() == 1 && isdigit(token[0])) {
             stack.push(token[0] - '0');
