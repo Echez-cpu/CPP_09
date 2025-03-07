@@ -15,7 +15,7 @@ public:
     RPN &operator=(const RPN &original_copy);
     ~RPN();
 
-    int evaluate(const str &expression);
+    int RPN_algorithm(const str &expression);
 
 private:
     std::stack<int> stack_obj;
