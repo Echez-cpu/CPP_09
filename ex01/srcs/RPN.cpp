@@ -16,7 +16,7 @@ RPN &RPN::operator=(const RPN &original_copy) {
 
 RPN::~RPN() {}
 
-bool RPN::isOperator(const std::string &token) {
+bool RPN::confirm_op(const str &token) {
     return (token == "+" || token == "-" || token == "*" || token == "/");
 }
 
@@ -31,7 +31,7 @@ int RPN::apply_operator(int a, int b, char op) {
     throw std::runtime_error("Error: Invalid operator.");
 }
 
-int RPN::evaluate(const std::string &expression) {
+int RPN::evaluate(const str &expression) {
     std::stack<int> stack;
     std::istringstream iss(expression);
     std::string token;
