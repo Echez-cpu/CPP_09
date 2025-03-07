@@ -1,10 +1,11 @@
 #include "../includes/RPN.hpp"
-#define YELLOW     "\033[33m"
+#define Y     "\033[33m"
+#define RESET   "\033[0m"
 
 
 int main(int argc, char **argv) {
     if (argc != 2) {
-        std::cerr << "Usage: ./RPN \"<RPN expression>\"" << std::endl;
+        std::cerr << Y << "Usage: ./RPN \"<RPN expression>\"" << RESET << std::endl;
         return 1;
     }
 
