@@ -1,21 +1,16 @@
 #include "../includes/PmergeMe.hpp"
 
-// Constructor
 PmergeMe::PmergeMe() {}
 
-// Copy Constructor
-PmergeMe::PmergeMe(const PmergeMe &other) { (void)other; }
+PmergeMe::PmergeMe(const PmergeMe &other) { (void)source; }
 
-// Copy Assignment Operator
-PmergeMe &PmergeMe::operator=(const PmergeMe &other) {
-    (void)other;
+PmergeMe &PmergeMe::operator=(const PmergeMe &original_copy) {
+    (void)original_copy;
     return *this;
 }
 
-// Destructor
 PmergeMe::~PmergeMe() {}
 
-// Merge-Insertion Sort for std::vector
 void PmergeMe::mergeInsertionSort(std::vector<int> &arr) {
     if (arr.size() <= 1) return;
 
@@ -45,7 +40,6 @@ void PmergeMe::mergeInsertionSort(std::vector<int> &arr) {
     arr = mainChain;
 }
 
-// Merge-Insertion Sort for std::deque
 void PmergeMe::mergeInsertionSort(std::deque<int> &arr) {
     if (arr.size() <= 1) return;
 
@@ -75,7 +69,6 @@ void PmergeMe::mergeInsertionSort(std::deque<int> &arr) {
     arr = mainChain;
 }
 
-// Sort and measure time for vector
 void PmergeMe::sortVector(std::vector<int> &arr) {
     clock_t start = clock();
     mergeInsertionSort(arr);
@@ -84,7 +77,6 @@ void PmergeMe::sortVector(std::vector<int> &arr) {
               << (double)(end - start) / CLOCKS_PER_SEC << " s" << std::endl;
 }
 
-// Sort and measure time for deque
 void PmergeMe::sortDeque(std::deque<int> &arr) {
     clock_t start = clock();
     mergeInsertionSort(arr);
