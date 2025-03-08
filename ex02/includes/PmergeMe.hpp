@@ -20,7 +20,7 @@ public:
     void sortDequeTime(std::deque<int> &arr);
 
 private:
-    void FordJohnSon_Algo(std::vector<int> &arr); // FordJohnSon_algo
+    void FordJohnSon_Algo(std::vector<int> &arr);
     void FordJohnSon_Algo(std::deque<int> &arr);
 };
 
