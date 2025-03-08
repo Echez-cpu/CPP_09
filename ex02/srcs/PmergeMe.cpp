@@ -2,7 +2,7 @@
 
 PmergeMe::PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe &other) { (void)source; }
+PmergeMe::PmergeMe(const PmergeMe &source) { (void)source; }
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &original_copy) {
     (void)original_copy;
