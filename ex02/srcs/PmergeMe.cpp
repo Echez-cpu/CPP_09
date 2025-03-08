@@ -74,7 +74,7 @@ void PmergeMe::sortVector(std::vector<int> &arr) {
     mergeInsertionSort(arr);
     clock_t end = clock();
     std::cout << "Time to process a range of " << arr.size() << " elements with std::vector: " 
-              << (double)(end - start) / CLOCKS_PER_SEC << " s" << std::endl;
+              << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
 }
 
 void PmergeMe::sortDeque(std::deque<int> &arr) {
@@ -82,7 +82,7 @@ void PmergeMe::sortDeque(std::deque<int> &arr) {
     mergeInsertionSort(arr);
     clock_t end = clock();
     std::cout << "Time to process a range of " << arr.size() << " elements with std::deque: " 
-              << (double)(end - start) / CLOCKS_PER_SEC << " s" << std::endl;
+              << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
 }
 
 // Process input
