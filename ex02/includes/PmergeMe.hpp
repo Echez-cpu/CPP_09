@@ -16,12 +16,12 @@ public:
     ~PmergeMe();
 
     void processInput(char **argv);
-    void sortVector(std::vector<int> &arr);
-    void sortDeque(std::deque<int> &arr);
+    void sortVectorTime(std::vector<int> &arr);
+    void sortDequeTime(std::deque<int> &arr);
 
 private:
-    void mergeInsertionSort(std::vector<int> &arr); // FordJohnSon_algo
-    void mergeInsertionSort(std::deque<int> &arr);
+    void FordJohnSon_Algo(std::vector<int> &arr); // FordJohnSon_algo
+    void FordJohnSon_Algo(std::deque<int> &arr);
 };
 
 #endif
