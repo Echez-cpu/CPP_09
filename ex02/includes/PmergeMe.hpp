@@ -18,6 +18,8 @@ public:
     void processInput(char **argv);
     void sortVector(std::vector<int> &arr);
     void sortDeque(std::deque<int> &arr);
+
+private:
     void mergeInsertionSort(std::vector<int> &arr); // FordJohnSon_algo
     void mergeInsertionSort(std::deque<int> &arr);
 };
