@@ -11,7 +11,7 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &original_copy) {
 
 PmergeMe::~PmergeMe() {}
 
-void PmergeMe::mergeInsertionSort(std::vector<int> &arr) {
+void PmergeMe::FordJohnSon_Algo(std::vector<int> &arr) {
     if (arr.size() <= 1) return;
 
     std::vector<int> mainChain, secondaryChain;
@@ -40,7 +40,7 @@ void PmergeMe::mergeInsertionSort(std::vector<int> &arr) {
     arr = mainChain;
 }
 
-void PmergeMe::mergeInsertionSort(std::deque<int> &arr) {
+void PmergeMe::FordJohnSon_Algo(std::deque<int> &arr) {
     if (arr.size() <= 1) return;
 
     std::deque<int> mainChain, secondaryChain;
@@ -69,23 +69,22 @@ void PmergeMe::mergeInsertionSort(std::deque<int> &arr) {
     arr = mainChain;
 }
 
-void PmergeMe::sortVector(std::vector<int> &arr) {
+void PmergeMe::sortVectorTime(std::vector<int> &arr) {
     clock_t start = clock();
-    mergeInsertionSort(arr);
+    FordJohnSon_Algo(arr);
     clock_t end = clock();
     std::cout << "Time to process a range of " << arr.size() << " elements with std::vector: " 
               << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
 }
 
-void PmergeMe::sortDeque(std::deque<int> &arr) {
+void PmergeMe::sortDequeTime(std::deque<int> &arr) {
     clock_t start = clock();
-    mergeInsertionSort(arr);
+    FordJohnSon_Algo(arr);
     clock_t end = clock();
     std::cout << "Time to process a range of " << arr.size() << " elements with std::deque: " 
               << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
 }
 
-// Process input
 void PmergeMe::processInput(char **argv) {
     std::vector<int> vec;
     std::deque<int> deq;
@@ -105,10 +104,13 @@ void PmergeMe::processInput(char **argv) {
     for (size_t i = 0; i < vec.size(); i++) std::cout << vec[i] << " ";
     std::cout << std::endl;
 
-    sortVector(vec);
-    sortDeque(deq);
-
+    FordJohnSon_Algo(vec);
+    
     std::cout << "After: ";
     for (size_t i = 0; i < vec.size(); i++) std::cout << vec[i] << " ";
     std::cout << std::endl;
+
+    sortVectorTime(vec);
+    sortDequeTime(deq);
+
 }
