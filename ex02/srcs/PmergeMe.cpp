@@ -46,7 +46,6 @@ void PmergeMe::FordJohnSon_Algo(std::deque<int> &arr) {
     if (arr.size() <= 1){
          return;
     }    
-    // if (arr.size() <= 1) return;
 
     std::deque<int> mainChain, secondaryChain;
 
