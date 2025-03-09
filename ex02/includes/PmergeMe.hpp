@@ -8,6 +8,11 @@
 #include <sstream>
 #include <ctime>
 
+#define RESET   "\033[0m"
+#define G   "\033[32m"
+#define R     "\033[31m"
+#define Y     "\033[33m"
+
 class PmergeMe {
 public:
     PmergeMe();
