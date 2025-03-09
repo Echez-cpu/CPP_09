@@ -107,7 +107,7 @@ void PmergeMe::processInput(char **argv) {
     FordJohnSon_Algo(vec);
     
     std::cout << G << "After: " << RESET;
-    for (size_t i = 0; i < vec.size(); i++) std::cout << vec[i] << " ";
+    for (size_t i = 0; i < vec.size(); i++) std::cout << B << vec[i] << RESET << " ";
     std::cout << std::endl;
 
     sortVectorTime(vec);
