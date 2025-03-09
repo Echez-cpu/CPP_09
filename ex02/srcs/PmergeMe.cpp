@@ -100,9 +100,9 @@ void PmergeMe::processInput(char **argv) {
         deq.push_back(num);
     }
 
-    std::cout << R << "Before: " << RESET << Y << RESET;
+    std::cout << R << "Before: ";
     for (size_t i = 0; i < vec.size(); i++) std::cout << vec[i] << " ";
-    std::cout << std::endl;
+    std::cout << Y << std::endl;
 
     FordJohnSon_Algo(vec);
     
