@@ -12,7 +12,10 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &original_copy) {
 PmergeMe::~PmergeMe() {}
 
 void PmergeMe::FordJohnSon_Algo(std::vector<int> &arr) {
-    if (arr.size() <= 1) return;
+    if (arr.size() <= 1){
+         std::cerr << R << "Error" << RESET << std::endl;
+         return;
+    }
 
     std::vector<int> mainChain, secondaryChain;
 
