@@ -73,16 +73,16 @@ void PmergeMe::sortVectorTime(std::vector<int> &arr) {
     clock_t start = clock();
     FordJohnSon_Algo(arr);
     clock_t end = clock();
-    std::cout << "Time to process a range of " << arr.size() << " elements with std::vector: " 
-              << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
+    std::cout << "Time to process a range of " << arr.size() << G << " elements with std::vector: " 
+              << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << " us" << RESET << std::endl;
 }
 
 void PmergeMe::sortDequeTime(std::deque<int> &arr) {
     clock_t start = clock();
     FordJohnSon_Algo(arr);
     clock_t end = clock();
-    std::cout << "Time to process a range of " << arr.size() << " elements with std::deque: " 
-              << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
+    std::cout << "Time to process a range of " << arr.size() << Y << " elements with std::deque: " 
+              << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << " us" << RESET << std::endl;
 }
 
 void PmergeMe::processInput(char **argv) {
@@ -90,23 +90,23 @@ void PmergeMe::processInput(char **argv) {
     std::deque<int> deq;
 
     for (int i = 1; argv[i]; i++) {
-        std::istringstream iss(argv[i]);
+        std::istringstream istream_str(argv[i]);
         int num;
-        if (!(iss >> num) || num <= 0) {
-            std::cerr << "Error" << std::endl;
+        if (!(isstream_str >> num) || num <= 0) {
+            std::cerr << RED << "Error" << RESET << std::endl;
             return;
         }
         vec.push_back(num);
         deq.push_back(num);
     }
 
-    std::cout << "Before: ";
+    std::cout << Y << "Before: ";
     for (size_t i = 0; i < vec.size(); i++) std::cout << vec[i] << " ";
     std::cout << std::endl;
 
     FordJohnSon_Algo(vec);
     
-    std::cout << "After: ";
+    std::cout << G << "After: ";
     for (size_t i = 0; i < vec.size(); i++) std::cout << vec[i] << " ";
     std::cout << std::endl;
 
