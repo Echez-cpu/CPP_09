@@ -92,7 +92,7 @@ void PmergeMe::processInput(char **argv) {
     for (int i = 1; argv[i]; i++) {
         std::istringstream istream_str(argv[i]);
         int num;
-        if (!(isstream_str >> num) || num <= 0) {
+        if (!(istream_str >> num) || num <= 0) {
             std::cerr << RED << "Error" << RESET << std::endl;
             return;
         }
