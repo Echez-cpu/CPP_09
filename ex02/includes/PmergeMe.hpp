@@ -12,6 +12,7 @@
 #define G   "\033[32m"
 #define R     "\033[31m"
 #define Y     "\033[33m"
+#define B    "\033[34m"
 
 class PmergeMe {
 public:
