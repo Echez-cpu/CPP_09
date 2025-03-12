@@ -36,7 +36,8 @@ void PmergeMe::FordJohnSon_Algo(std::vector<int> &arr) {
 
     for (size_t i = 0; i < secondaryChain.size(); i++) {
         std::vector<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), secondaryChain[i]);
-        mainChain.insert(pos, secondaryChain[i]);
+        mainChain.insert(pos, secondaryChain[i]);  // Although not used here, The Jacobsthal sequence ensures that elements from the 
+                                                   //secondary chain are inserted in a way that minimizes the number of comparisons required.
     }
 
     arr = mainChain;
@@ -118,3 +119,11 @@ void PmergeMe::processInput(char **argv) {
     sortDequeTime(deq);
 
 }
+
+
+/*Why Does Jacobsthal Order Help?
+
+Fewer comparisons: Instead of inserting elements sequentially, Jacobsthal numbers help reduce the number of comparisons by 
+strategically placing elements at positions that minimize unnecessary shifts.
+Optimized insertion order: The Jacobsthal sequence balances efficiency between sorted order maintenance and minimizing computational cost.
+Better cache performance: The order ensures that recently accessed elements are reused efficiently, improving cache locality.*/
