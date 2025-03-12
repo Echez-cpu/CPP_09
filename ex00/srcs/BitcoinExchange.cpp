@@ -142,7 +142,7 @@ bool BitcoinExchange::check_positive(str line) {
     }
 
     float f = atof(value.c_str());
-    return (f >= 0.0);
+    return (f >= 0);
 }
 
 
